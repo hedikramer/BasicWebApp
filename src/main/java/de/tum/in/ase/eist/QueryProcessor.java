@@ -25,6 +25,7 @@ public class QueryProcessor {
                     index++;
                 }
             }
+            return String.valueOf(min);
         }else if (query.contains("what is")) {
             String[] split = query.split("\\s+");
             int firstNumber = Integer.parseInt(split[2]) + Integer.parseInt(split[4]);
