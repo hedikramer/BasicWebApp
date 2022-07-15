@@ -28,7 +28,7 @@ public class QueryProcessor {
             return String.valueOf(min);
         }else if (query.contains("what is")) {
             String[] split = query.split("\\s+");
-            int firstNumber = Integer.parseInt(split[2]) + Integer.parseInt(split[4]);
+            int firstNumber = Integer.parseInt(split[3]) + Integer.parseInt(split[5]);
             return String.valueOf(firstNumber);
         }
             return "";
