@@ -15,15 +15,19 @@ public class QueryProcessor {
            return "hedi";
         } else if(query.contains("which of the following numbers is the largest:")) {
             String[] split = query.split(":");
-            String numbers = split[1];
+            String numbers = split[2];
             String[] numbersOnly = numbers.split(",");
+            numbersOnly[0] = numbersOnly[0].replace(" ","");
             int min = Integer.parseInt(numbersOnly[0]);
+
+
             int index = 0;
             for (int i = 0; i < numbersOnly.length; i++) {
+                numbersOnly[index] = numbersOnly[index].replace(" ", "");
                 if (Integer.parseInt(numbersOnly[index]) > min) {
                     min = Integer.parseInt(numbersOnly[index]);
-                    index++;
                 }
+                index++;
             }
             return String.valueOf(min);
         }else if (query.contains("what is")) {

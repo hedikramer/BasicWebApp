@@ -30,4 +30,15 @@ class QueryProcessorTest {
 		}
 	}
 
+	@Test
+	void plus(){
+		String actual = queryProcessor.process("17d95830: what is 15 plus 9");
+		assertEquals("24",actual);
+	}
+
+	@Test
+	void largest(){
+		String actual = queryProcessor.process("14ca89f0: which of the following numbers is the largest: 93, 327");
+		assertEquals("327",actual);
+	}
 }
